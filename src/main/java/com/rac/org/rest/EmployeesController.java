@@ -25,9 +25,9 @@ public class EmployeesController {
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") String id) {
 		Optional<Employee> employee = organisationService.findEmployeeById(id);
 		if (employee.isPresent()) {
-			return new ResponseEntity<>(employee.get(), HttpStatus.OK);
+			return new ResponseEntity<Employee>(employee.get(), HttpStatus.OK);
 		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<Employee>(HttpStatus.NOT_FOUND);
 		}
 	}
 
